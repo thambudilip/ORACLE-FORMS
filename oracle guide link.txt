@@ -1,0 +1,10 @@
+learning source for oraccle forms and reports:
+-------------------------------------------------------
+Fusion Middleware Oracle Reports Tutorial
+
+https://docs.oracle.com/cd/E15523_01/bi.1111/b32123/toc.htm
+
+Fusion Middleware Forms Services Deployment Guide
+
+
+

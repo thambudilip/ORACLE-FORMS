@@ -1,0 +1,12 @@
+Creating block using form builder - Mr.Vijaykumar
+
+Normally forms are created for DML operations. (Insert , Update , Delete )
+
+Datablock:
+-------------
+
+* Every Data block is associated with table.
+
+We can create  a block using 2 ways,
+
+one is Use the Data block wizard and another one is manually.

@@ -1,0 +1,183 @@
+Oracle forms syllabus for beginners:-
+--------------------------------------------
+Module 1: Introduction to Oracle Forms
+
+What is Oracle Forms?
+Overview of Oracle Forms development environment.
+Understanding the Forms Builder interface.
+Creating a simple Oracle Forms application.
+
+Module 2: Oracle Forms Basics
+
+Oracle Forms architecture and components.
+Form Modules and Object Libraries.
+Building a Form Module.
+Basic Form properties and settings.
+Running and testing a Form.
+
+Module 3: Designing Forms
+
+Creating and managing Forms canvases.
+Adding and customizing form items (text fields, buttons, checkboxes, etc.).
+Using data blocks for data retrieval and display.
+Understanding form triggers and event-driven programming.
+
+Module 4: Working with Data Blocks
+
+Creating and configuring data blocks.
+Defining block properties.
+Using wizards for data block creation.
+Navigating records in data blocks.
+Data validation and input masks.
+
+Module 5: Handling Data Sources
+
+Connecting to Oracle databases.
+Creating and configuring data sources.
+Querying and manipulating data from the database.
+Managing transactions and commit/rollback operations.
+
+Module 6: Advanced Form Design
+
+Implementing master-detail forms.
+Creating tabbed canvases for user-friendly interfaces.
+Using LOVs (List of Values) for data input.
+Implementing cascading LOVs.
+
+Module 7: Customization and User Interaction
+
+Writing PL/SQL code in Forms.
+Working with Form-level and item-level triggers.
+Implementing business logic and validation.
+Displaying messages and handling errors.
+
+Module 8: Menu Creation and Navigation
+
+Designing custom menus.
+Associating menus with forms.
+Implementing menu item triggers.
+Navigating between forms and menus.
+
+Module 9: Security and Authentication
+
+Setting up user authentication.
+Implementing user roles and privileges.
+Data security and record-level security.
+
+Module 10: Deployment and Distribution
+
+Compiling and generating Form executables.
+Packaging and deploying Forms applications.
+Troubleshooting common deployment issues.
+
+Module 11: Best Practices and Performance Tuning
+
+Writing efficient PL/SQL code.
+Optimizing query performance.
+Guidelines for designing scalable and maintainable Forms applications.
+
+Module 12: Integration and Extending Functionality
+
+Integrating Oracle Forms with other Oracle technologies (Reports, APEX, etc.).
+Building custom JavaBeans and integrating them into Forms.
+
+Module 13: Project Development
+
+Working on a small project to apply concepts learned throughout the course.
+
+Module 14: Review and Q&A
+
+Review of key concepts and best practices.
+Open session for questions and clarifications
+------------------------------------------------------------------------------------------------------
+Oracle forms syllabus for intermediaries:
+-------------------------------------------------
+Module 1: Introduction to Oracle Forms
+
+Overview of Oracle Forms
+Understanding the Forms Developer Environment
+Creating and Running a Basic Form
+
+Module 2: Building Blocks of Oracle Forms
+
+Working with Blocks, Items, and Canvas
+Defining Data Blocks
+Creating and Using Items
+Understanding Layout and Visual Attributes
+
+Module 3: Working with Data Blocks
+
+Creating Data Blocks from Tables
+Using Query by Example (QBE)
+Customizing Data Blocks
+Working with Record Groups
+Master-Detail Forms
+
+Module 4: Event Handling and Triggers
+
+Introduction to Triggers
+Types of Triggers (Pre- and Post-)
+Trigger Execution Hierarchy
+Writing PL/SQL Code in Triggers
+Event Handling
+
+Module 5: Form Design and User Interface
+
+Designing Forms Layouts
+Working with Canvases and Windows
+Creating Menus and Toolbars
+Implementing Tabbed Canvases
+Using Smart Classes for UI 
+
+Module 6: Validation and Error Handling
+
+Implementing Data Validation
+Handling Runtime Errors
+Displaying Error Messages
+Using Built-in Validation Functions
+
+Module 7: Navigational Controls
+
+Creating Navigation Menus
+Defining Buttons and Triggers
+Using Navigation Items
+Implementing Drill-Down Functionality
+
+Module 8: Advanced Topics
+
+Working with LOVs (List of Values)
+Creating Pop-Up Windows and Alerts
+Implementing File I/O Operations
+Handling Multiple Forms
+Deploying and Testing Forms Applications
+
+Module 9: Security and Authentication
+
+Securing Forms Applications
+User Authentication and Authorization
+Role-Based Access Control
+
+Module 10: Integration and Reporting
+
+Integrating with Oracle Reports
+Embedding Reports in Forms
+Printing and Exporting Data
+
+Module 11: Performance Tuning
+
+Identifying Performance Bottlenecks
+Optimizing SQL Queries
+Caching and Buffers
+
+Module 12: Deployment and Maintenance
+
+Packaging Forms Applications
+Deploying Forms to a Web Server
+Backup and Recovery Procedures
+
+Module 13: Real-World Projects
+Practical Projects and Case Studies
+Building Complete Forms Applications
+
+
+

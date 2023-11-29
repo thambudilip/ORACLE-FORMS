@@ -1,0 +1,191 @@
+28-09-2023
+Oracle forms:
+----------------
+1. Create  a Data block manually and perform CRUD operations in oracle forms and clear button
+2. Create a Data block using table and perform CRUD operations in oracle forms and clear button
+
+1. Use the table Dilip_emp;
+
+SELECT * FROM DILIP_EMP;
+
+INSERT INTO DILIP_EMP(EMPNO,ENAME,JOB,DEPTNO) VALUES (:T1,:T2,:T3,:T4);
+COMMIT;
+
+UPDATE TABLE DILIP_EMP SET ENAME = :T2 WHERE EMPNO = :T1;
+UPDATE TABLE DILIP_EMP SET JOB= :T3 WHERE EMPNO = :T1;
+UPDATE TABLE DILIP_EMP SET SAL = :T4 WHERE EMPNO = :T1;
+COMMIT;
+
+---------------------------------------
+UPDATE DILIP_EMP55 SET JOB = :T3,SAL = :T4 WHERE EMPNO = :T1;
+COMMIT;
+
+UPDATE DILIP_EMP SET ENAME = :T2 , JOB = :T3 , DEPTNO = :T4  WHERE EMPNO = :T1;
+
+DELETE * FROM DILIP_EMP WHERE EMPNO = :T1;
+COMMIT;
+
+SELECT EMPNO,ENAME,JOB,SAL,DEPNO INTO :T1,:T2,:T3,:T4,:T5
+FROM DILIP_EMP WHERE EMPNO = :T1;
+COMMIT;
+
+Code for clear all the columns:
+-----------------------------------
+syntax: 
+--------
+Blockname.textboxname := Null;
+
+Example:
+----------
+
+BEGIN
+   :Block2.T1 := NULL;
+   :Block2.T2 := NULL;
+   :Block2.T3 := NULL;
+   :Block2.T4 := NULL;
+END;
+
+creating a master details form for emp and dept table:
+-----------------------------------------------------------------
+Refer the examples for master details forms (m3..fmx ---> 28.09.2023 Folder )
+	
+
+Creating Lov in oracle forms
+-----------------------------------
+
+1. to create a master table for dept and create a lov for all department columns and display the result for employee table , how to achive this in  oracle forms
+
+INSERT INTO DILIP_EMP57(EMPNO,ENAME,JOB,SAL,DEPTNO) VALUES (:T1,:T2,:T3,:T4,:T5);
+COMMIT;
+
+
+Form validation with alert messages for CRUD oeprations:
+---------------------------------------------------------------------------
+
+--INSERT INTO DILIP_EMP56 (ENAME,JOB,SAL,DEPTNO,EMPNO) VALUES (:T1,:T2,:T3,:T4,:T5);
+--COMMIT;
+
+
+/*DECLARE
+   v_ename VARCHAR2(50) := :Block2.T1; 
+   v_job VARCHAR2(50) := :Block2.T2;   
+   v_sal NUMBER := TO_NUMBER(:Block2.T3);  
+   v_deptno NUMBER := TO_NUMBER(:Block2.T4);  
+   v_empno NUMBER := TO_NUMBER(:Block2.T5);  
+BEGIN
+   INSERT INTO DILIP_EMP56 (ENAME, JOB, SAL, DEPTNO, EMPNO)
+   VALUES (v_ename, v_job, v_sal, v_deptno, v_empno);
+   COMMIT;
+     MESSAGE('DATA INSERTED SUCCESSFULLY');  
+EXCEPTION
+   WHEN OTHERS THEN
+    MESSAGE('AN ERROR OCCURED');
+END;*/
+
+
+
+/*
+BEGIN
+  IF :Block2.T1 IS NULL OR :Block2.T2 IS NULL OR :Block2.T3 IS NULL OR :Block2.T4 IS NULL OR :Block2.T5 IS NULL THEN
+    -- Data not inserted, show an error message
+    SHOW_ALERT('Error_Alert');
+  ELSE
+    -- Data inserted successfully, show a success message
+    SHOW_ALERT('Success_Alert');
+  END IF;
+END;
+*/
+
+
+alert code works with output:-
+------------------------------------
+DECLARE
+ X NUMBER;
+BEGIN
+  INSERT INTO DILIP_EMP56 (ENAME, JOB, SAL, DEPTNO, EMPNO)
+  VALUES (:Block2.T1, :Block2.T2, :Block2.T3, :Block2.T4, :Block2.T5);
+ IF :Block2.T1 IS NULL OR :Block2.T2 IS NULL OR :Block2.T3 IS NULL OR :Block2.T4 IS NULL OR :Block2.T5 IS NULL THEN
+ X := SHOW_ALERT('Error_Alert');
+ ELSE
+ X := SHOW_ALERT('Success_Alert');
+ END IF;
+ END;
+
+Insert alert:
+---------------
+DECLARE
+ X NUMBER;
+ Y NUMBER;
+BEGIN
+  INSERT INTO DILIP_EMP56 (ENAME, JOB, SAL, DEPTNO, EMPNO)
+  VALUES (:Block2.T1, :Block2.T2, :Block2.T3, :Block2.T4, :Block2.T5);
+  COMMIT;
+ IF :Block2.T1 IS NULL OR :Block2.T2 IS NULL OR :Block2.T3 IS NULL OR :Block2.T4 IS NULL OR :Block2.T5 IS NULL THEN
+ X := SHOW_ALERT('Error_Alert');
+ ELSE
+ Y := SHOW_ALERT('Success_Alert');
+ END IF;
+ END;
+
+Clear :
+---------
+
+BEGIN
+:BLOCK2.T1 := NULL;
+:BLOCK2.T2 := NULL;
+:BLOCK2.T3 := NULL;
+:BLOCK2.T4 := NULL;
+:BLOCK2.T5 := NULL;
+END;
+
+
+Update alert:
+----------------
+
+DECLARE
+ X NUMBER;
+ Y NUMBER;
+BEGIN
+	UPDATE DILIP_EMP56 SET JOB = :T2,SAL = :T3 , DEPTNO = :T4
+  WHERE EMPNO = :T5;
+  COMMIT;
+   IF SQL%ROWCOUNT = 1 THEN
+    X := SHOW_ALERT('Update_sucess');
+  ELSE
+    Y :=  SHOW_ALERT('Update_failed');
+  END IF;
+END;
+
+
+Delete alert:
+--------------
+DECLARE
+ X NUMBER;
+ Y NUMBER;
+BEGIN
+	DELETE FROM DILIP_EMP56 WHERE EMPNO = :Block2.T5;
+  COMMIT;
+ IF SQL%ROWCOUNT = 1 THEN
+ X := SHOW_ALERT('DELETE_SUCCESS');
+ ELSE
+ Y := SHOW_ALERT('Delete_failed');
+ END IF;
+ END;
+
+
+Select alert:
+---------------
+
+DECLARE 
+	X NUMBER;
+	Y NUMBER;
+BEGIN	
+SELECT ENAME,JOB,SAL,DEPTNO,EMPNO INTO :T1,:T2,:T3,:T4,:T5
+FROM DILIP_EMP56 WHERE EMPNO = :T5;
+COMMIT;
+IF SQL%ROWCOUNT = 1 THEN
+	X := SHOW_ALERT('selection_sucess');
+ELSE
+	Y :=SHOW_ALERT('selection_failed'); 
+END IF;
+END;
